@@ -1,8 +1,7 @@
-
-
 # 🏥 Smart Healthcare Appointment System (SHAS)
 
-
+[![Go Version](https://img.shields.io/badge/Go-1.22+-00ADD8?style=flat\&logo=go)](https://golang.org) [![React](https://img.shields.io/badge/React-18+-61DAFB?style=flat\&logo=react)](https://reactjs.org) [![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?style=flat\&logo=mysql\&logoColor=white)](https://www.mysql.com)
+[![License](https://img.shields.io/badge/License-Educational-green.svg)](LICENSE) [![Status](https://img.shields.io/badge/Status-Ready%20to%20Start-brightgreen)](https://github.com/MotionProgramming/Smart-Healthcare-Appointment-System)
 
 **Developer:** Md Abdullah Rajeb (MotionProgramming)
 **Status:** Not started / Ready to begin
@@ -13,7 +12,7 @@
 ## 📑 Table of Contents
 
 * [Project Overview](#project-overview)
-* [Architecture & Flow](#-architecture--flow)
+* [Architecture & Flow](#architecture--flow)
 * [Core Objectives](#core-objectives)
 * [Technology Stack](#technology-stack)
 * [Prerequisites](#prerequisites)
@@ -34,10 +33,10 @@
 
 **SHAS** is a full-stack healthcare appointment management platform.
 
-**Key Goals:**
+**Primary Goals:**
 
-* Streamline patient-doctor scheduling
-* Secure authentication & role-based access
+* Simplify scheduling for patients and doctors
+* Secure authentication and role-based access control
 * Real-time appointment booking with conflict prevention
 * Responsive React frontend + Go backend
 
@@ -62,36 +61,40 @@
                                +-------------+
 ```
 
-**Key Components & Flow:**
+**Components & Flow:**
 
 1. **Frontend (React + Tailwind CSS)**
 
-   * Responsive UI for Patients, Doctors, and Admins
-   * Handles routing, form validation, and API requests via Axios
+   * Responsive UI for patients, doctors, and admins
+   * Routing, form validation, and API request handling (Axios)
 
 2. **Backend (Go + Gorilla Mux)**
 
-   * RESTful API server for authentication, appointments, and user management
-   * JWT authentication & RBAC for secure access
-   * Goroutines handle concurrent requests efficiently
+   * RESTful API server: authentication, appointments, user management
+   * JWT authentication and RBAC for secure access
+   * Goroutines for concurrent request handling
 
 3. **Database (MySQL 8+)**
 
    * Stores users, doctors, appointments, availability, and audit logs
-   * Normalized (3NF) schema ensures integrity and efficient queries
+   * 3NF normalized schema ensures data integrity and efficient queries
    * ACID transactions prevent conflicts and maintain consistency
 
-**Request Flow Example (Patient Booking an Appointment):**
+**Patient Appointment Booking Flow:**
 
-1. Patient selects doctor & time slot on frontend
-2. React frontend sends POST request to `/api/patient/appointments`
+1. Patient selects a doctor and time slot from the frontend
+
+2. React frontend sends a POST request to `/api/patient/appointments`
+
 3. Go backend:
 
-   * Validates JWT & patient role
+   * Validates JWT and patient role
    * Checks doctor availability
    * Creates appointment within a transaction
-4. Backend responds with success/failure
-5. Frontend updates UI in real-time
+
+4. Backend responds (success/failure)
+
+5. Frontend updates UI
 
 **System Flow Diagram (Mermaid, GitHub-compatible):**
 
@@ -109,26 +112,26 @@ flowchart LR
 
 1. **Scheduling Efficiency**
 
-   * Conflict-free appointment booking
+   * Conflict-free appointment management
    * Multi-doctor & multi-department support
    * Real-time availability updates
 
 2. **Security & Compliance**
 
-   * JWT authentication with bcrypt password hashing
+   * JWT authentication + bcrypt password hashing
    * Role-Based Access Control (RBAC)
-   * SQL injection prevention & input validation
+   * SQL injection prevention and input validation
 
 3. **Performance & Reliability**
 
-   * Go concurrency with goroutines
-   * Database connection pooling & ACID transactions
-   * Normalized MySQL schema (3NF)
+   * Concurrency with Goroutines
+   * DB connection pooling & ACID transactions
+   * 3NF normalized MySQL schema
 
 4. **User Experience**
 
    * Intuitive dashboards
-   * Responsive design for web & mobile
+   * Responsive web and mobile design
    * Real-time notifications
 
 ---
@@ -144,16 +147,26 @@ flowchart LR
 
 ## 📌 Prerequisites
 
-**Backend:**
+### **Backend Requirements**
 
 * Go 1.22+
-* MySQL 8+
-* RAM 2GB+, Storage 500MB
+* MySQL 8+ **or** PostgreSQL
+* Redis (recommended for caching and session management in production)
 
-**Frontend:**
+### **Frontend Requirements**
 
-* Node.js 18+, npm 9+
-* Modern browser (Chrome/Firefox/Edge)
+* Node.js 18+
+* npm 9+
+
+### **Other Tools**
+
+* Git
+* Docker & Docker Compose (recommended for local development and production)
+* Postman or Swagger UI (for API testing)
+
+### **Recommended Browser**
+
+* Latest version of Chrome, Firefox, Edge, or Safari
 
 **Environment Variables:**
 
@@ -164,7 +177,7 @@ DB_HOST=localhost
 DB_PORT=3306
 DB_NAME=healthcare_db
 DB_USER=root
-DB_PASSWORD=your_secure_password
+DB_PASSWORD=your_secure_secret_key
 JWT_SECRET=your_secure_secret_key_minimum_32_characters
 JWT_EXPIRY=24h
 SERVER_PORT=8080
@@ -179,7 +192,7 @@ REACT_APP_API_URL=http://localhost:8080/api
 REACT_APP_ENV=development
 ```
 
-> ⚠️ **Important:** Replace `JWT_SECRET` with a secure, random key for production.
+> ⚠️ **Important:** Use a secure, randomly generated `JWT_SECRET` in production.
 
 ---
 
@@ -208,7 +221,7 @@ EXIT;
 cd backend
 go mod download
 cp .env.example .env
-# Edit .env with your DB credentials
+# Update DB credentials in .env
 go run cmd/server/main.go
 # Backend runs at http://localhost:8080
 ```
@@ -231,13 +244,6 @@ npm start
 Email: admin@shas.com
 Password: Admin@123
 ```
-
-**Steps:**
-
-1. Login as admin & change password
-2. Add doctors & configure availability
-3. Register test patient
-4. Test appointment booking
 
 ---
 
@@ -356,7 +362,7 @@ GET  /api/admin/audit-logs
 
 ## 🤝 Contributing
 
-1. Fork repo → Create branch → Commit → PR
+1. Fork the repository → Create a branch → Commit → PR
 2. Follow Go & React best practices
 3. Add tests for new features
 4. Update documentation
