@@ -402,6 +402,6 @@ Before deploying to production:
 
 - GitHub: [@MotionProgramming](https://github.com/MotionProgramming)
 - Email: [mdabdullahrajeb90@gmail.com](mailto:mdabdullahrajeb90@gmail.com)
-- Project Repository: [Smart Healthcare Appointment System](https://github.com/MotionProgramming/Smart-Healthcare-Appointment-System)
+- Project Repository: [Smart Healthcare Appointment System](https://github.com/MotionPrograming/Smart-Healthcare-Appointment-System)
 
 ---
