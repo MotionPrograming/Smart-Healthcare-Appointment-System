@@ -11,6 +11,7 @@
     <Folder Include="Grpc\" />
     <Folder Include="IntegrationEvents\" />
     <Folder Include="MessageContracts\" />
+    <Folder Include="Responses\" />
   </ItemGroup>
 
 </Project>

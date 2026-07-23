@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <Folder Include="AggregateRoots\" />
+    <Folder Include="Common\" />
+    <Folder Include="Constants\" />
     <Folder Include="DomainEvents\" />
     <Folder Include="Entities\" />
     <Folder Include="Exceptions\" />

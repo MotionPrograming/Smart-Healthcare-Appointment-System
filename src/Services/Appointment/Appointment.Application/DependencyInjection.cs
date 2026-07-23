@@ -1,6 +1,8 @@
 ﻿namespace Appointment.Application;
 
-public class Class1
+public class DependencyInjection
 {
 
 }
+
+

@@ -13,8 +13,8 @@
     <Folder Include="Persistence\Configurations\" />
     <Folder Include="Persistence\DbContexts\" />
     <Folder Include="Persistence\Migrations\" />
+    <Folder Include="Persistence\Repositories\" />
     <Folder Include="Persistence\Seed\" />
-    <Folder Include="Repositories\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
