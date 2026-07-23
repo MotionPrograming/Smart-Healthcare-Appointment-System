@@ -14,4 +14,10 @@
     <ProjectReference Include="..\..\..\ServiceDefaults\SHAS.ServiceDefaults.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Configuration\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Middlewares\" />
+  </ItemGroup>
+
 </Project>
